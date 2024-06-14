@@ -7,7 +7,7 @@ namespace OmieAPI;
 public static class Requisicao
 {
 
-    public static async Task<string> FazerRequisicao(Empresa empresa, ApiEndpoint endpoint, int pagina = 1)
+    public static async Task<RestResponse> FazerRequisicao(Empresa empresa, ApiEndpoint endpoint, ConfiguracaoJson configuracao, int pagina = 1)
     {
         var options = new RestClientOptions(endpoint.UrlBase);
 
@@ -17,7 +17,7 @@ public static class Requisicao
 
         request.AddHeader("Content-Type", "application/json");
 
-        var parametrosJson = JObject.Parse(endpoint.TemplateParametro.Replace("$$$pagina$$$", pagina.ToString()));
+        var parametrosJson = JObject.Parse(configuracao.TemplateParametro.Replace("$$$pagina$$$", pagina.ToString()).Replace("$$$total$$$", configuracao.ValorRegistrosPorPagina.ToString()));
 
         var parametrosObjeto = JsonSerializer.Deserialize<object>(parametrosJson.ToString());
 
@@ -38,8 +38,6 @@ public static class Requisicao
         
         RestResponse response = await client.ExecuteAsync(request);
         
-        //Console.WriteLine(response.Content);
-
-        return response.Content!.ToString();
+        return response;
     }
 }

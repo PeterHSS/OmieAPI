@@ -1,45 +1,53 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\temp\\projetos\\OmieAPI\\",
+  "WorkspaceRootPath": "C:\\Users\\pedro\\source\\repos\\PeterHSS\\OmieAPI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{41C787A4-B64D-427E-9A85-DF54533E7B7A}|OmieAPI\\OmieAPI.csproj|c:\\temp\\projetos\\omieapi\\omieapi\\worker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{41C787A4-B64D-427E-9A85-DF54533E7B7A}|OmieAPI\\OmieAPI.csproj|solutionrelative:omieapi\\worker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{41C787A4-B64D-427E-9A85-DF54533E7B7A}|OmieAPI\\OmieAPI.csproj|c:\\temp\\projetos\\omieapi\\omieapi\\negocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{41C787A4-B64D-427E-9A85-DF54533E7B7A}|OmieAPI\\OmieAPI.csproj|c:\\users\\pedro\\source\\repos\\peterhss\\omieapi\\omieapi\\negocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{41C787A4-B64D-427E-9A85-DF54533E7B7A}|OmieAPI\\OmieAPI.csproj|solutionrelative:omieapi\\negocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{41C787A4-B64D-427E-9A85-DF54533E7B7A}|OmieAPI\\OmieAPI.csproj|c:\\temp\\projetos\\omieapi\\omieapi\\requisicao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{41C787A4-B64D-427E-9A85-DF54533E7B7A}|OmieAPI\\OmieAPI.csproj|solutionrelative:omieapi\\requisicao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{41C787A4-B64D-427E-9A85-DF54533E7B7A}|OmieAPI\\OmieAPI.csproj|c:\\temp\\projetos\\omieapi\\omieapi\\acessodados.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{41C787A4-B64D-427E-9A85-DF54533E7B7A}|OmieAPI\\OmieAPI.csproj|solutionrelative:omieapi\\acessodados.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{41C787A4-B64D-427E-9A85-DF54533E7B7A}|OmieAPI\\OmieAPI.csproj|c:\\temp\\projetos\\omieapi\\omieapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{41C787A4-B64D-427E-9A85-DF54533E7B7A}|OmieAPI\\OmieAPI.csproj|solutionrelative:omieapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{41C787A4-B64D-427E-9A85-DF54533E7B7A}|OmieAPI\\OmieAPI.csproj|c:\\temp\\projetos\\omieapi\\omieapi\\empresa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{41C787A4-B64D-427E-9A85-DF54533E7B7A}|OmieAPI\\OmieAPI.csproj|solutionrelative:omieapi\\empresa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{41C787A4-B64D-427E-9A85-DF54533E7B7A}|OmieAPI\\OmieAPI.csproj|c:\\temp\\projetos\\omieapi\\omieapi\\apiendpoint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{41C787A4-B64D-427E-9A85-DF54533E7B7A}|OmieAPI\\OmieAPI.csproj|solutionrelative:omieapi\\apiendpoint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{41C787A4-B64D-427E-9A85-DF54533E7B7A}|OmieAPI\\OmieAPI.csproj|c:\\temp\\projetos\\omieapi\\omieapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{41C787A4-B64D-427E-9A85-DF54533E7B7A}|OmieAPI\\OmieAPI.csproj|solutionrelative:omieapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{41C787A4-B64D-427E-9A85-DF54533E7B7A}|OmieAPI\\OmieAPI.csproj|c:\\temp\\projetos\\omieapi\\omieapi\\omieapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "AbsoluteMoniker": "D:0:0:{41C787A4-B64D-427E-9A85-DF54533E7B7A}|OmieAPI\\OmieAPI.csproj|c:\\users\\pedro\\source\\repos\\peterhss\\omieapi\\omieapi\\omieapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{41C787A4-B64D-427E-9A85-DF54533E7B7A}|OmieAPI\\OmieAPI.csproj|solutionrelative:omieapi\\omieapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{41C787A4-B64D-427E-9A85-DF54533E7B7A}|OmieAPI\\OmieAPI.csproj|c:\\temp\\projetos\\omieapi\\omieapi\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "AbsoluteMoniker": "D:0:0:{41C787A4-B64D-427E-9A85-DF54533E7B7A}|OmieAPI\\OmieAPI.csproj|c:\\users\\pedro\\source\\repos\\peterhss\\omieapi\\omieapi\\acessodados.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{41C787A4-B64D-427E-9A85-DF54533E7B7A}|OmieAPI\\OmieAPI.csproj|solutionrelative:omieapi\\acessodados.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{41C787A4-B64D-427E-9A85-DF54533E7B7A}|OmieAPI\\OmieAPI.csproj|c:\\users\\pedro\\source\\repos\\peterhss\\omieapi\\omieapi\\retornogeral.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{41C787A4-B64D-427E-9A85-DF54533E7B7A}|OmieAPI\\OmieAPI.csproj|solutionrelative:omieapi\\retornogeral.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{41C787A4-B64D-427E-9A85-DF54533E7B7A}|OmieAPI\\OmieAPI.csproj|c:\\users\\pedro\\source\\repos\\peterhss\\omieapi\\omieapi\\configuracaojson.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{41C787A4-B64D-427E-9A85-DF54533E7B7A}|OmieAPI\\OmieAPI.csproj|solutionrelative:omieapi\\configuracaojson.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{41C787A4-B64D-427E-9A85-DF54533E7B7A}|OmieAPI\\OmieAPI.csproj|c:\\users\\pedro\\source\\repos\\peterhss\\omieapi\\omieapi\\empresa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{41C787A4-B64D-427E-9A85-DF54533E7B7A}|OmieAPI\\OmieAPI.csproj|solutionrelative:omieapi\\empresa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{41C787A4-B64D-427E-9A85-DF54533E7B7A}|OmieAPI\\OmieAPI.csproj|c:\\users\\pedro\\source\\repos\\peterhss\\omieapi\\omieapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{41C787A4-B64D-427E-9A85-DF54533E7B7A}|OmieAPI\\OmieAPI.csproj|solutionrelative:omieapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{41C787A4-B64D-427E-9A85-DF54533E7B7A}|OmieAPI\\OmieAPI.csproj|c:\\users\\pedro\\source\\repos\\peterhss\\omieapi\\omieapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{41C787A4-B64D-427E-9A85-DF54533E7B7A}|OmieAPI\\OmieAPI.csproj|solutionrelative:omieapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{41C787A4-B64D-427E-9A85-DF54533E7B7A}|OmieAPI\\OmieAPI.csproj|c:\\users\\pedro\\source\\repos\\peterhss\\omieapi\\omieapi\\worker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{41C787A4-B64D-427E-9A85-DF54533E7B7A}|OmieAPI\\OmieAPI.csproj|solutionrelative:omieapi\\worker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{41C787A4-B64D-427E-9A85-DF54533E7B7A}|OmieAPI\\OmieAPI.csproj|c:\\users\\pedro\\source\\repos\\peterhss\\omieapi\\omieapi\\requisicao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{41C787A4-B64D-427E-9A85-DF54533E7B7A}|OmieAPI\\OmieAPI.csproj|solutionrelative:omieapi\\requisicao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{41C787A4-B64D-427E-9A85-DF54533E7B7A}|OmieAPI\\OmieAPI.csproj|c:\\users\\pedro\\source\\repos\\peterhss\\omieapi\\omieapi\\apiendpoint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{41C787A4-B64D-427E-9A85-DF54533E7B7A}|OmieAPI\\OmieAPI.csproj|solutionrelative:omieapi\\apiendpoint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{41C787A4-B64D-427E-9A85-DF54533E7B7A}|OmieAPI\\OmieAPI.csproj|c:\\users\\pedro\\source\\repos\\peterhss\\omieapi\\omieapi\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{41C787A4-B64D-427E-9A85-DF54533E7B7A}|OmieAPI\\OmieAPI.csproj|solutionrelative:omieapi\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
@@ -50,55 +58,44 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "AcessoDados.cs",
-              "DocumentMoniker": "C:\\temp\\projetos\\OmieAPI\\OmieAPI\\AcessoDados.cs",
-              "RelativeDocumentMoniker": "OmieAPI\\AcessoDados.cs",
-              "ToolTip": "C:\\temp\\projetos\\OmieAPI\\OmieAPI\\AcessoDados.cs",
-              "RelativeToolTip": "OmieAPI\\AcessoDados.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACAAAAAEAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-09T21:18:33.054Z"
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ApiEndpoint.cs",
-              "DocumentMoniker": "C:\\temp\\projetos\\OmieAPI\\OmieAPI\\ApiEndpoint.cs",
-              "RelativeDocumentMoniker": "OmieAPI\\ApiEndpoint.cs",
-              "ToolTip": "C:\\temp\\projetos\\OmieAPI\\OmieAPI\\ApiEndpoint.cs",
-              "RelativeToolTip": "OmieAPI\\ApiEndpoint.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAwAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-09T21:13:02.316Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Negocio.cs",
-              "DocumentMoniker": "C:\\temp\\projetos\\OmieAPI\\OmieAPI\\Negocio.cs",
+              "DocumentMoniker": "C:\\Users\\pedro\\source\\repos\\PeterHSS\\OmieAPI\\OmieAPI\\Negocio.cs",
               "RelativeDocumentMoniker": "OmieAPI\\Negocio.cs",
-              "ToolTip": "C:\\temp\\projetos\\OmieAPI\\OmieAPI\\Negocio.cs",
+              "ToolTip": "C:\\Users\\pedro\\source\\repos\\PeterHSS\\OmieAPI\\OmieAPI\\Negocio.cs",
               "RelativeToolTip": "OmieAPI\\Negocio.cs",
-              "ViewState": "AQIAABUAAAAAAAAAAAAowB4AAAAFAAAA",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAACIAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-05T03:07:07.936Z"
+              "WhenOpened": "2024-06-05T03:07:07.936Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
               "Title": "Empresa.cs",
-              "DocumentMoniker": "C:\\temp\\projetos\\OmieAPI\\OmieAPI\\Empresa.cs",
+              "DocumentMoniker": "C:\\Users\\pedro\\source\\repos\\PeterHSS\\OmieAPI\\OmieAPI\\Empresa.cs",
               "RelativeDocumentMoniker": "OmieAPI\\Empresa.cs",
-              "ToolTip": "C:\\temp\\projetos\\OmieAPI\\OmieAPI\\Empresa.cs",
+              "ToolTip": "C:\\Users\\pedro\\source\\repos\\PeterHSS\\OmieAPI\\OmieAPI\\Empresa.cs",
               "RelativeToolTip": "OmieAPI\\Empresa.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -106,25 +103,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 1,
               "Title": "OmieAPI.csproj",
-              "DocumentMoniker": "C:\\temp\\projetos\\OmieAPI\\OmieAPI\\OmieAPI.csproj",
+              "DocumentMoniker": "C:\\Users\\pedro\\Source\\Repos\\PeterHSS\\OmieAPI\\OmieAPI\\OmieAPI.csproj",
               "RelativeDocumentMoniker": "OmieAPI\\OmieAPI.csproj",
-              "ToolTip": "C:\\temp\\projetos\\OmieAPI\\OmieAPI\\OmieAPI.csproj",
+              "ToolTip": "C:\\Users\\pedro\\Source\\Repos\\PeterHSS\\OmieAPI\\OmieAPI\\OmieAPI.csproj",
               "RelativeToolTip": "OmieAPI\\OmieAPI.csproj",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-06-05T02:38:28.313Z"
+              "WhenOpened": "2024-06-05T02:38:28.313Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\temp\\projetos\\OmieAPI\\OmieAPI\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\pedro\\source\\repos\\PeterHSS\\OmieAPI\\OmieAPI\\Program.cs",
               "RelativeDocumentMoniker": "OmieAPI\\Program.cs",
-              "ToolTip": "C:\\temp\\projetos\\OmieAPI\\OmieAPI\\Program.cs",
+              "ToolTip": "C:\\Users\\pedro\\source\\repos\\PeterHSS\\OmieAPI\\OmieAPI\\Program.cs",
               "RelativeToolTip": "OmieAPI\\Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-05T02:02:08.018Z"
             },
@@ -132,9 +130,9 @@
               "$type": "Document",
               "DocumentIndex": 7,
               "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\temp\\projetos\\OmieAPI\\OmieAPI\\appsettings.json",
+              "DocumentMoniker": "C:\\Users\\pedro\\source\\repos\\PeterHSS\\OmieAPI\\OmieAPI\\appsettings.json",
               "RelativeDocumentMoniker": "OmieAPI\\appsettings.json",
-              "ToolTip": "C:\\temp\\projetos\\OmieAPI\\OmieAPI\\appsettings.json",
+              "ToolTip": "C:\\Users\\pedro\\source\\repos\\PeterHSS\\OmieAPI\\OmieAPI\\appsettings.json",
               "RelativeToolTip": "OmieAPI\\appsettings.json",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAADAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
@@ -142,36 +140,84 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 8,
               "Title": "Worker.cs",
-              "DocumentMoniker": "C:\\temp\\projetos\\OmieAPI\\OmieAPI\\Worker.cs",
+              "DocumentMoniker": "C:\\Users\\pedro\\source\\repos\\PeterHSS\\OmieAPI\\OmieAPI\\Worker.cs",
               "RelativeDocumentMoniker": "OmieAPI\\Worker.cs",
-              "ToolTip": "C:\\temp\\projetos\\OmieAPI\\OmieAPI\\Worker.cs",
+              "ToolTip": "C:\\Users\\pedro\\source\\repos\\PeterHSS\\OmieAPI\\OmieAPI\\Worker.cs",
               "RelativeToolTip": "OmieAPI\\Worker.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAeAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-05T02:02:10.214Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-05T02:02:10.214Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 9,
               "Title": "Requisicao.cs",
-              "DocumentMoniker": "C:\\temp\\projetos\\OmieAPI\\OmieAPI\\Requisicao.cs",
+              "DocumentMoniker": "C:\\Users\\pedro\\source\\repos\\PeterHSS\\OmieAPI\\OmieAPI\\Requisicao.cs",
               "RelativeDocumentMoniker": "OmieAPI\\Requisicao.cs",
-              "ToolTip": "C:\\temp\\projetos\\OmieAPI\\OmieAPI\\Requisicao.cs",
+              "ToolTip": "C:\\Users\\pedro\\source\\repos\\PeterHSS\\OmieAPI\\OmieAPI\\Requisicao.cs",
               "RelativeToolTip": "OmieAPI\\Requisicao.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAwCsAAAAEAAAA",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAgwCkAAAAEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-05T03:20:33.597Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 2,
+              "Title": "AcessoDados.cs",
+              "DocumentMoniker": "C:\\Users\\pedro\\source\\repos\\PeterHSS\\OmieAPI\\OmieAPI\\AcessoDados.cs",
+              "RelativeDocumentMoniker": "OmieAPI\\AcessoDados.cs",
+              "ToolTip": "C:\\Users\\pedro\\source\\repos\\PeterHSS\\OmieAPI\\OmieAPI\\AcessoDados.cs",
+              "RelativeToolTip": "OmieAPI\\AcessoDados.cs",
+              "ViewState": "AQIAAH8AAAAAAAAAAAAMwK4AAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-09T21:18:33.054Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ConfiguracaoJson.cs",
+              "DocumentMoniker": "C:\\Users\\pedro\\source\\repos\\PeterHSS\\OmieAPI\\OmieAPI\\ConfiguracaoJson.cs",
+              "RelativeDocumentMoniker": "OmieAPI\\ConfiguracaoJson.cs",
+              "ToolTip": "C:\\Users\\pedro\\source\\repos\\PeterHSS\\OmieAPI\\OmieAPI\\ConfiguracaoJson.cs",
+              "RelativeToolTip": "OmieAPI\\ConfiguracaoJson.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-13T02:31:52.576Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ApiEndpoint.cs",
+              "DocumentMoniker": "C:\\Users\\pedro\\source\\repos\\PeterHSS\\OmieAPI\\OmieAPI\\ApiEndpoint.cs",
+              "RelativeDocumentMoniker": "OmieAPI\\ApiEndpoint.cs",
+              "ToolTip": "C:\\Users\\pedro\\source\\repos\\PeterHSS\\OmieAPI\\OmieAPI\\ApiEndpoint.cs",
+              "RelativeToolTip": "OmieAPI\\ApiEndpoint.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-09T21:13:02.316Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "RetornoGeral.cs",
+              "DocumentMoniker": "C:\\Users\\pedro\\source\\repos\\PeterHSS\\OmieAPI\\OmieAPI\\RetornoGeral.cs",
+              "RelativeDocumentMoniker": "OmieAPI\\RetornoGeral.cs",
+              "ToolTip": "C:\\Users\\pedro\\source\\repos\\PeterHSS\\OmieAPI\\OmieAPI\\RetornoGeral.cs",
+              "RelativeToolTip": "OmieAPI\\RetornoGeral.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-13T03:18:42.262Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "launchSettings.json",
-              "DocumentMoniker": "C:\\temp\\projetos\\OmieAPI\\OmieAPI\\Properties\\launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\pedro\\source\\repos\\PeterHSS\\OmieAPI\\OmieAPI\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "OmieAPI\\Properties\\launchSettings.json",
-              "ToolTip": "C:\\temp\\projetos\\OmieAPI\\OmieAPI\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\pedro\\source\\repos\\PeterHSS\\OmieAPI\\OmieAPI\\Properties\\launchSettings.json",
               "RelativeToolTip": "OmieAPI\\Properties\\launchSettings.json",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",

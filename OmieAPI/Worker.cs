@@ -19,7 +19,10 @@ namespace OmieAPI
                 if (_logger.IsEnabled(LogLevel.Information))
                 {
                     _logger.LogInformation("Worker running at: {time}", DateTimeOffset.Now);
-                    await new Negocio(_acessoDados).ExecutaLogica();
+                    using (Negocio negocio = new(_acessoDados))
+                    {
+                        await negocio.ExecutaLogica();
+                    };
                 }
                 await Task.Delay(1000, stoppingToken);
             }

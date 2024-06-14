@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "bLmcspsRw0fj4EuLRcHrxLAaS2yVe3lwF2lw8TynbvmduksUt2fEU0r1yLSYJJ+96PUHtAeL3P+zytOkMT9riQ==",
+  "dgSpecHash": "rxEwGxCVR5zkhL1UtPNFZyz5ZctHzdysoNSW5i1+Btg0wYqsQOjrcOTqCA50ULGfkS6ofWvA8dc7gE6nMkmTVw==",
   "success": true,
-  "projectFilePath": "C:\\temp\\projetos\\OmieAPI\\OmieAPI\\OmieAPI.csproj",
+  "projectFilePath": "C:\\Users\\pedro\\Source\\Repos\\PeterHSS\\OmieAPI\\OmieAPI\\OmieAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\pedro\\.nuget\\packages\\dapper\\2.1.35\\dapper.2.1.35.nupkg.sha512",
     "C:\\Users\\pedro\\.nuget\\packages\\microsoft.extensions.configuration\\8.0.0\\microsoft.extensions.configuration.8.0.0.nupkg.sha512",

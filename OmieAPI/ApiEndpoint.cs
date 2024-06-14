@@ -10,9 +10,7 @@
 
         public required string MetodoChamada { get; set; }
 
-        public required string TipoPagina { get; set; }
-
-        public required string TemplateParametro { get; set; }
+        public required int CodigoConfiguracaoJson { get; set; }
 
         public required string ChaveRetorno { get; set; }
 

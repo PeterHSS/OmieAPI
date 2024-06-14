@@ -1,11 +1,13 @@
-﻿namespace OmieAPI;
-using Dapper;
+﻿using Dapper;
 using System.Data;
 using System.Data.SqlClient;
 
-public class AcessoDados
+namespace OmieAPI;
+public class AcessoDados : IDisposable
 {
     private readonly string? _connectionString;
+    private bool _disposed = false;
+
 
     public AcessoDados(IConfiguration configuration)
     {
@@ -52,22 +54,66 @@ public class AcessoDados
         }
     }
 
-    public async Task InsereRetornoGeral(long codigoEmpresa, long codigoApiEndpoint, string retornoJson) 
+
+    public async Task<IEnumerable<ConfiguracaoJson>> ObterListaConfiguracaoJson()
     {
         try
         {
             using IDbConnection connection = new SqlConnection(_connectionString);
 
-            const string query = @"INSERT INTO RetornoGeral (CodigoEmpresa, CodigoApiEndpoint, RetornoJson) VALUES (@CodigoEmpresa, @CodigoApiEndpoint, @RetornoJson)";
+            const string query = @"SELECT * FROM ConfiguracaoJson";
 
             connection.Open();
 
+            var listaConfiguracaoJson = await connection.QueryAsync<ConfiguracaoJson>(query);
+
+            return listaConfiguracaoJson;
+        }
+        catch (Exception)
+        {
+            throw;
+        }
+    }
+
+    public async Task InsereRetornoGeral(IEnumerable<RetornoGeral> listaRetornoGeral) 
+    {
+        try
+        {
+            using IDbConnection connection = new SqlConnection(_connectionString);
+
+            var parametros = new DynamicParameters();
+
+            parametros.Add("@tipoRetornoGeral", ObterTabelaRetornoGeralDeListaRetornoGeral(listaRetornoGeral), DbType.Object, ParameterDirection.Input);
+
+            connection.Open();
+
+            await connection.ExecuteAsync("InsereRetornoGeral", parametros, commandType: CommandType.StoredProcedure);
+        }
+        catch (Exception)
+        {
+
+            throw;
+        }
+    }
+
+    public async Task InsereRequisicaoComFalha(Empresa empresa, ApiEndpoint apiEndpoint, ConfiguracaoJson configuracaoJson, int pagina)
+    {
+        try
+        {
+            using IDbConnection connection = new SqlConnection(_connectionString);
+
+            const string query = @"INSERT INTO ErroRequisicao (CodigoEmpresa, CodigoApiEndpoint, CodigoConfiguracaoJson, Pagina)
+                                    VALUES (@CodigoEmpresa, @CodigoApiEndpoint, @CodigoConfiguracaoJson, @Pagina)";
+
             var parametros = new
-            {
-                CodigoEmpresa = codigoEmpresa,
-                CodigoApiEndpoint = codigoApiEndpoint,
-                RetornoJson = retornoJson
+            { 
+                CodigoEmpresa = empresa.Codigo,
+                CodigoApiEndpoint = apiEndpoint.Codigo,
+                CodigoConfiguracaoJson = configuracaoJson.Codigo,
+                Pagina = pagina
             };
+
+            connection.Open();
 
             await connection.ExecuteAsync(query, parametros);
         }
@@ -78,4 +124,85 @@ public class AcessoDados
         }
     }
 
+    private DataTable ObterTabelaRetornoGeralDeListaRetornoGeral(IEnumerable<RetornoGeral> listaRetornoGeral)
+    {
+        DataTable tabela = new DataTable();
+
+        tabela.Columns.Add("CodigoEmpresa", typeof(long));
+        tabela.Columns.Add("CodigoApiEndpoint", typeof(long));
+        tabela.Columns.Add("Pagina", typeof(string));
+        tabela.Columns.Add("TotalDePaginas", typeof(string));
+        tabela.Columns.Add("Registros", typeof(string));
+        tabela.Columns.Add("TotalDeRegistros", typeof(string));
+        tabela.Columns.Add("PosicaoRetorno", typeof(int));
+        tabela.Columns.Add("ChaveRetorno", typeof(string));
+        tabela.Columns.Add("ValorRetorno", typeof(string));
+
+        foreach(var retornoGeral in listaRetornoGeral) 
+        { 
+            tabela.Rows.Add(
+                retornoGeral.CodigoEmpresa,
+                retornoGeral.CodigoApiEndpoint,
+                retornoGeral.Pagina,
+                retornoGeral.TotalDePaginas,
+                retornoGeral.Registros,
+                retornoGeral.TotalDeRegistros,
+                retornoGeral.PosicaoRetorno,
+                retornoGeral.ChaveRetorno,
+                retornoGeral.ValorRetorno
+                );
+        }
+
+        return tabela;
+    }
+
+    public async Task ExecutaProcedureAlimentarTabelas()
+    {
+        try
+        {
+            using IDbConnection connection = new SqlConnection(_connectionString);
+
+            connection.Open();
+
+            await connection.ExecuteAsync("AlimentaTabelas", commandType: CommandType.StoredProcedure);
+        }
+        catch (Exception)
+        {
+            throw;
+        }
+    }
+
+    public async Task ObterListaParaReprocessamento()
+    {
+        //throw new NotImplementedException();
+    }
+
+    public void Dispose()
+    {
+        Dispose(true);
+        GC.SuppressFinalize(this);
+    }
+
+    protected virtual void Dispose(bool disposing)
+    {
+        if (_disposed)
+            return;
+
+        if (disposing)
+        {
+            // Libere recursos gerenciados, se houver
+            // No momento, não há recursos gerenciados persistentes para liberar.
+        }
+
+        // Libere recursos não gerenciados, se houver
+
+        _disposed = true;
+    }
+
+
+
+    ~AcessoDados()
+    {
+        Dispose(false);
+    }
 }

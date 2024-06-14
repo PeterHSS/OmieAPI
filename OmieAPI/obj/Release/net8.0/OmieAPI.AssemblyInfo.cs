@@ -13,7 +13,7 @@ using System.Reflection;
 
 [assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("dotnet-OmieAPI-410ffaf5-f2b9-4dcd-a9b1-7e0e0e7a6f78")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("OmieAPI")]
-[assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
+[assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+32d8a2cedd80bf8294f819ca7b8f1b3b920a6e57")]
 [assembly: System.Reflection.AssemblyProductAttribute("OmieAPI")]
