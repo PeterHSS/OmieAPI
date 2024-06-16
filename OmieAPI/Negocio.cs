@@ -16,35 +16,68 @@ public class Negocio : IDisposable
     public async Task ExecutaLogica()
     {
         var listaEmpresas = await _acessoDados.ObterListaEmpresa();
-
-        //var listaApiEndpoint = await _acessoDados.ObterListaApiEndpoint();
-        //var listaConfiguracaoJson = await _acessoDados.ObterListaConfiguracaoJson();
-
-        //var listaReprocessar = await _acessoDados.ObterListaParaReprocessamento();
-
+        var listaApiEndpoint = await _acessoDados.ObterListaApiEndpoint();
+        var listaConfiguracaoJson = await _acessoDados.ObterListaConfiguracaoJson();
 
         var tasks = new List<Task>();
 
         foreach (var empresa in listaEmpresas)
-        {
-            tasks.Add(Task.Run(() => RealizarChamadasAsync(empresa)));
-        }
+            tasks.Add(Task.Run(() => RealizarChamadasAsync(empresa, listaApiEndpoint, listaConfiguracaoJson)));
 
         Task.WaitAll(tasks.ToArray());
 
-        //await _acessoDados.ExecutaProcedureAlimentarTabelas();
+        await _acessoDados.ExecutaProcedureAsync("[dbo].[ValidaPaginasFaltantes]");
+        await ReprocessaCasosDeErroAsync(listaEmpresas, listaApiEndpoint, listaConfiguracaoJson);
+        await _acessoDados.ExecutaProcedureAsync("[dbo].[AlimentaTabelas]");
     }
 
-    public async Task RealizarChamadasAsync(Empresa empresa)
+    private async Task ReprocessaCasosDeErroAsync(IEnumerable<Empresa> listaEmpresas, IEnumerable<ApiEndpoint> listaApiEndpoint, IEnumerable<ConfiguracaoJson> listaConfiguracaoJson)
     {
+        var reprocessar = await _acessoDados.ObterRequisicaoParaReprocessamento();
 
-        var listaApiEndpoint = await _acessoDados.ObterListaApiEndpoint();
+        while (reprocessar.Rows.Count > 0)
+        {
+            int codigoRequisicao = (int)reprocessar.Rows[0]["Codigo"];
+            int codigoEmpresa = (int)reprocessar.Rows[0]["CodigoEmpresa"];
+            int codigoApiEndPoint = (int)reprocessar.Rows[0]["CodigoApiEndpoint"];
+            int codigoConfiguracaoJson = (int)reprocessar.Rows[0]["CodigoConfiguracaoJson"];
+            int pagina = (int)reprocessar.Rows[0]["Pagina"];
 
-        var listaConfiguracaoJson = await _acessoDados.ObterListaConfiguracaoJson();
+            Empresa empresa = listaEmpresas.FirstOrDefault(emp => emp.Codigo == codigoEmpresa)!;
+            ApiEndpoint apiEndpoint = listaApiEndpoint.FirstOrDefault(api => api.Codigo == codigoApiEndPoint)!;
+            ConfiguracaoJson configuracaoJson = listaConfiguracaoJson.FirstOrDefault(conf => conf.Codigo == codigoConfiguracaoJson)!;
 
+            var response = await Requisicao.FazerRequisicao(empresa, apiEndpoint, configuracaoJson, pagina);
+
+            if (response.IsSuccessful)
+            {
+                List<string> retornosJson = new();
+
+                string responseString = response.Content!.ToString()!;
+
+                retornosJson.Add(responseString);
+
+                IEnumerable<RetornoGeral> retornoGeral = ObterListaDeRetornoGeralPorListaDeJson(empresa, apiEndpoint, configuracaoJson, retornosJson);
+
+                await _acessoDados.InsereRetornoGeral(retornoGeral);
+            }
+            else
+            {
+                await _acessoDados.InsereRequisicaoComFalha(empresa, apiEndpoint, configuracaoJson, pagina);
+            }
+
+            await _acessoDados.DeletarRequisicaoParaReprocessamento(codigoRequisicao);
+
+            reprocessar = await _acessoDados.ObterRequisicaoParaReprocessamento();
+
+            await Task.Delay(10000);
+        }
+    }
+
+    public async Task RealizarChamadasAsync(Empresa empresa, IEnumerable<ApiEndpoint> listaApiEndpoint, IEnumerable<ConfiguracaoJson> listaConfiguracaoJson)
+    {
         foreach (var apiEndpoint in listaApiEndpoint)
         {
-
             List<string> retornosJson = new();
 
             ConfiguracaoJson configuracaoJson = listaConfiguracaoJson.FirstOrDefault(c => c.Codigo == apiEndpoint.CodigoConfiguracaoJson)!;
