@@ -156,7 +156,7 @@ public class AcessoDados : IDisposable
         return tabela;
     }
 
-    public async Task ExecutaProcedureAlimentarTabelas()
+    public async Task ExecutaProcedureAsync(string nomeProcedure)
     {
         try
         {
@@ -164,7 +164,7 @@ public class AcessoDados : IDisposable
 
             connection.Open();
 
-            await connection.ExecuteAsync("AlimentaTabelas", commandType: CommandType.StoredProcedure);
+            await connection.ExecuteAsync(nomeProcedure, commandType: CommandType.StoredProcedure);
         }
         catch (Exception)
         {
@@ -172,9 +172,50 @@ public class AcessoDados : IDisposable
         }
     }
 
-    public async Task ObterListaParaReprocessamento()
+    public async Task<DataTable> ObterRequisicaoParaReprocessamento()
     {
-        //throw new NotImplementedException();
+        try
+        {
+            using IDbConnection connection = new SqlConnection(_connectionString);
+
+            const string query = @"SELECT TOP 1 * FROM ErroRequisicao ORDER BY Codigo ASC";
+
+            connection.Open();
+
+            var leitor = await connection.ExecuteReaderAsync(query);
+
+            var tabela = new DataTable();
+
+            tabela.Load(leitor);
+
+            return tabela;
+        }
+        catch (Exception)
+        {
+
+            throw;
+        }
+    }
+
+    public async Task DeletarRequisicaoParaReprocessamento(int codigoRequisicao)
+    {
+        try
+        {
+            using IDbConnection connection = new SqlConnection(_connectionString);
+
+            const string query = @"DELETE FROM ErroRequisicao WHERE Codigo = @Codigo";
+
+            var parametros = new { Codigo = codigoRequisicao };
+
+            connection.Open();
+
+            await connection.ExecuteAsync(query, parametros);
+        }
+        catch (Exception)
+        {
+
+            throw;
+        }
     }
 
     public void Dispose()
@@ -199,7 +240,7 @@ public class AcessoDados : IDisposable
         _disposed = true;
     }
 
-
+  
 
     ~AcessoDados()
     {
