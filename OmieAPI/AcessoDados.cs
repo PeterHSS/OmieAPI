@@ -24,7 +24,7 @@ public class AcessoDados : IDisposable
 
             connection.Open();
 
-            var listaEmpresas = await connection.QueryAsync<Empresa>(query);
+            var listaEmpresas = await connection.QueryAsync<Empresa>(query, commandTimeout: 9999);
 
             return listaEmpresas;
         }
@@ -44,7 +44,7 @@ public class AcessoDados : IDisposable
 
             connection.Open();
 
-            var listaApiEndpoint = await connection.QueryAsync<ApiEndpoint>(query);
+            var listaApiEndpoint = await connection.QueryAsync<ApiEndpoint>(query, commandTimeout: 9999);
 
             return listaApiEndpoint;
         }
@@ -65,7 +65,7 @@ public class AcessoDados : IDisposable
 
             connection.Open();
 
-            var listaConfiguracaoJson = await connection.QueryAsync<ConfiguracaoJson>(query);
+            var listaConfiguracaoJson = await connection.QueryAsync<ConfiguracaoJson>(query, commandTimeout: 9999);
 
             return listaConfiguracaoJson;
         }
@@ -87,7 +87,7 @@ public class AcessoDados : IDisposable
 
             connection.Open();
 
-            await connection.ExecuteAsync("InsereRetornoGeral", parametros, commandType: CommandType.StoredProcedure);
+            await connection.ExecuteAsync("InsereRetornoGeral", parametros, commandType: CommandType.StoredProcedure, commandTimeout: 9999);
         }
         catch (Exception)
         {
@@ -115,7 +115,7 @@ public class AcessoDados : IDisposable
 
             connection.Open();
 
-            await connection.ExecuteAsync(query, parametros);
+            await connection.ExecuteAsync(query, parametros, commandTimeout: 9999);
         }
         catch (Exception)
         {
@@ -164,7 +164,7 @@ public class AcessoDados : IDisposable
 
             connection.Open();
 
-            await connection.ExecuteAsync(nomeProcedure, commandType: CommandType.StoredProcedure);
+            await connection.ExecuteAsync(nomeProcedure, commandType: CommandType.StoredProcedure, commandTimeout: 9999);
         }
         catch (Exception)
         {
@@ -182,7 +182,7 @@ public class AcessoDados : IDisposable
 
             connection.Open();
 
-            var leitor = await connection.ExecuteReaderAsync(query);
+            var leitor = await connection.ExecuteReaderAsync(query, commandTimeout: 9999);
 
             var tabela = new DataTable();
 
@@ -209,7 +209,7 @@ public class AcessoDados : IDisposable
 
             connection.Open();
 
-            await connection.ExecuteAsync(query, parametros);
+            await connection.ExecuteAsync(query, parametros, commandTimeout: 9999);
         }
         catch (Exception)
         {

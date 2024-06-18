@@ -15,20 +15,27 @@ public class Negocio : IDisposable
 
     public async Task ExecutaLogica()
     {
-        var listaEmpresas = await _acessoDados.ObterListaEmpresa();
-        var listaApiEndpoint = await _acessoDados.ObterListaApiEndpoint();
-        var listaConfiguracaoJson = await _acessoDados.ObterListaConfiguracaoJson();
+        try
+        {
+            var listaEmpresas = await _acessoDados.ObterListaEmpresa();
+            var listaApiEndpoint = await _acessoDados.ObterListaApiEndpoint();
+            var listaConfiguracaoJson = await _acessoDados.ObterListaConfiguracaoJson();
 
-        var tasks = new List<Task>();
+            var tasks = new List<Task>();
 
-        foreach (var empresa in listaEmpresas)
-            tasks.Add(Task.Run(() => RealizarChamadasAsync(empresa, listaApiEndpoint, listaConfiguracaoJson)));
+            foreach (var empresa in listaEmpresas)
+                tasks.Add(Task.Run(() => RealizarChamadasAsync(empresa, listaApiEndpoint, listaConfiguracaoJson)));
 
-        Task.WaitAll(tasks.ToArray());
+            Task.WaitAll(tasks.ToArray());
 
-        await _acessoDados.ExecutaProcedureAsync("[dbo].[ValidaPaginasFaltantes]");
-        await ReprocessaCasosDeErroAsync(listaEmpresas, listaApiEndpoint, listaConfiguracaoJson);
-        await _acessoDados.ExecutaProcedureAsync("[dbo].[AlimentaTabelas]");
+            await _acessoDados.ExecutaProcedureAsync("[dbo].[ValidaPaginasFaltantes]");
+            await ReprocessaCasosDeErroAsync(listaEmpresas, listaApiEndpoint, listaConfiguracaoJson);
+            await _acessoDados.ExecutaProcedureAsync("[dbo].[AlimentaTabelas]");
+        }
+        catch (Exception)
+        {
+            throw;
+        }
     }
 
     private async Task ReprocessaCasosDeErroAsync(IEnumerable<Empresa> listaEmpresas, IEnumerable<ApiEndpoint> listaApiEndpoint, IEnumerable<ConfiguracaoJson> listaConfiguracaoJson)

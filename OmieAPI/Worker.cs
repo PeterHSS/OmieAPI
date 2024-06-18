@@ -14,18 +14,33 @@ namespace OmieAPI
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
-            while (!stoppingToken.IsCancellationRequested)
+            try
             {
-                if (_logger.IsEnabled(LogLevel.Information))
+                while (!stoppingToken.IsCancellationRequested)
                 {
-                    _logger.LogInformation("Worker running at: {time}", DateTimeOffset.Now);
-                    using (Negocio negocio = new(_acessoDados))
+                    if (_logger.IsEnabled(LogLevel.Information))
                     {
-                        await negocio.ExecutaLogica();
-                    };
+                        _logger.LogInformation("Worker running at: {time}", DateTimeOffset.Now);
+                        using (Negocio negocio = new(_acessoDados))
+                        {
+                            await negocio.ExecutaLogica();
+                        };
+                    }
+                    await Task.Delay(86400000, stoppingToken);
                 }
-                await Task.Delay(1000, stoppingToken);
             }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "An error occurred while executing the worker.");
+                throw;
+            }
+
+        }
+        
+        public override async Task StopAsync(CancellationToken cancellationToken)
+        {
+            _logger.LogInformation("Worker stopping at: {time}", DateTimeOffset.Now);
+            await base.StopAsync(cancellationToken);
         }
     }
 }
