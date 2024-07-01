@@ -1,8 +1,9 @@
 ﻿using Newtonsoft.Json.Linq;
+using OmieAPI.Entidades;
 using RestSharp;
 using System.Text.Json;
 
-namespace OmieAPI;
+namespace OmieAPI.AgenteExterno;
 
 public static class Requisicao
 {
@@ -30,14 +31,14 @@ public static class Requisicao
             {
                 parametrosObjeto
             }
-        }; 
+        };
 
         var jsonBody = JsonSerializer.Serialize(body);
 
         request.AddStringBody(jsonBody, DataFormat.Json);
-        
+
         RestResponse response = await client.ExecuteAsync(request);
-        
+
         return response;
     }
 }

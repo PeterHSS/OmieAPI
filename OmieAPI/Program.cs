@@ -1,4 +1,5 @@
 using OmieAPI;
+using OmieAPI.Dados;
 
 var builder = Host.CreateDefaultBuilder(args)
     .ConfigureAppConfiguration((context, config) =>

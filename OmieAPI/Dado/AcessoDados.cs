@@ -1,18 +1,13 @@
 ﻿using Dapper;
+using OmieAPI.Entidades;
 using System.Data;
 using System.Data.SqlClient;
 
-namespace OmieAPI;
-public class AcessoDados : IDisposable
+namespace OmieAPI.Dados;
+public class AcessoDados(IConfiguration configuration) : IDisposable
 {
-    private readonly string? _connectionString;
+    private readonly string? _connectionString = configuration.GetConnectionString("PRD");
     private bool _disposed = false;
-
-
-    public AcessoDados(IConfiguration configuration)
-    {
-        _connectionString = configuration.GetConnectionString("PRD");
-    }
 
     public async Task<IEnumerable<Empresa>> ObterListaEmpresa()
     {
@@ -75,7 +70,7 @@ public class AcessoDados : IDisposable
         }
     }
 
-    public async Task InsereRetornoGeral(IEnumerable<RetornoGeral> listaRetornoGeral) 
+    public async Task InsereRetornoGeral(IEnumerable<RetornoGeral> listaRetornoGeral)
     {
         try
         {
@@ -106,7 +101,7 @@ public class AcessoDados : IDisposable
                                     VALUES (@CodigoEmpresa, @CodigoApiEndpoint, @CodigoConfiguracaoJson, @Pagina)";
 
             var parametros = new
-            { 
+            {
                 CodigoEmpresa = empresa.Codigo,
                 CodigoApiEndpoint = apiEndpoint.Codigo,
                 CodigoConfiguracaoJson = configuracaoJson.Codigo,
@@ -126,7 +121,7 @@ public class AcessoDados : IDisposable
 
     private DataTable ObterTabelaRetornoGeralDeListaRetornoGeral(IEnumerable<RetornoGeral> listaRetornoGeral)
     {
-        DataTable tabela = new DataTable();
+        DataTable tabela = new();
 
         tabela.Columns.Add("CodigoEmpresa", typeof(long));
         tabela.Columns.Add("CodigoApiEndpoint", typeof(long));
@@ -138,8 +133,8 @@ public class AcessoDados : IDisposable
         tabela.Columns.Add("ChaveRetorno", typeof(string));
         tabela.Columns.Add("ValorRetorno", typeof(string));
 
-        foreach(var retornoGeral in listaRetornoGeral) 
-        { 
+        foreach (var retornoGeral in listaRetornoGeral)
+        {
             tabela.Rows.Add(
                 retornoGeral.CodigoEmpresa,
                 retornoGeral.CodigoApiEndpoint,
@@ -240,7 +235,7 @@ public class AcessoDados : IDisposable
         _disposed = true;
     }
 
-  
+
 
     ~AcessoDados()
     {

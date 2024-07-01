@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("OmieAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+79a73cafedf8d3ea8ac616c3a0f29085dfaf7833")]
 [assembly: System.Reflection.AssemblyProductAttribute("OmieAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("OmieAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

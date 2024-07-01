@@ -1,4 +1,4 @@
-﻿namespace OmieAPI;
+﻿namespace OmieAPI.Entidades;
 
 public class Empresa
 {
@@ -7,10 +7,4 @@ public class Empresa
     public required string AppChave { get; set; }
     public required string AppSegredo { get; set; }
     public DateTime Criacao { get; }
-
-
-    public override string ToString()
-    {
-        return $"Codigo {Codigo}, Nome {Nome}, AppChave {AppChave}, AppSegredo {AppSegredo}, Criacao {Criacao} \n";
-    }
 }

@@ -1,16 +1,12 @@
+using OmieAPI.Dados;
+using OmieAPI.Negocio;
+
 namespace OmieAPI
 {
-    public class Worker : BackgroundService
+    public class Worker(ILogger<Worker> logger, AcessoDados acessoDados) : BackgroundService
     {
-        private readonly ILogger<Worker> _logger;
-        private readonly AcessoDados _acessoDados;
-
-
-        public Worker(ILogger<Worker> logger, AcessoDados acessoDados)
-        {
-            _logger = logger;
-            _acessoDados = acessoDados;
-        }
+        private readonly ILogger<Worker> _logger = logger;
+        private readonly AcessoDados _acessoDados = acessoDados;
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
@@ -21,7 +17,7 @@ namespace OmieAPI
                     if (_logger.IsEnabled(LogLevel.Information))
                     {
                         _logger.LogInformation("Worker running at: {time}", DateTimeOffset.Now);
-                        using (Negocio negocio = new(_acessoDados))
+                        using (OmieAPINegocio negocio = new(_acessoDados))
                         {
                             await negocio.ExecutaLogica();
                         };

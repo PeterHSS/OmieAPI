@@ -1,4 +1,4 @@
-﻿namespace OmieAPI
+﻿namespace OmieAPI.Entidades
 {
     public class ConfiguracaoJson
     {

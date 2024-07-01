@@ -1,17 +1,14 @@
-﻿using Microsoft.Extensions.Primitives;
-using Newtonsoft.Json.Linq;
+﻿using Newtonsoft.Json.Linq;
+using OmieAPI.AgenteExterno;
+using OmieAPI.Dados;
+using OmieAPI.Entidades;
 
-namespace OmieAPI;
+namespace OmieAPI.Negocio;
 
-public class Negocio : IDisposable
+public class OmieAPINegocio(AcessoDados acessoDados) : IDisposable
 {
-    private readonly AcessoDados _acessoDados;
+    private readonly AcessoDados _acessoDados = acessoDados;
     private bool _disposed = false; // Flag para detectar chamadas redundantes
-
-    public Negocio(AcessoDados acessoDados)
-    {
-        _acessoDados = acessoDados;
-    }
 
     public async Task ExecutaLogica()
     {
@@ -21,12 +18,14 @@ public class Negocio : IDisposable
             var listaApiEndpoint = await _acessoDados.ObterListaApiEndpoint();
             var listaConfiguracaoJson = await _acessoDados.ObterListaConfiguracaoJson();
 
-            var tasks = new List<Task>();
+            //var tasks = new List<Task>();
 
-            foreach (var empresa in listaEmpresas)
-                tasks.Add(Task.Run(() => RealizarChamadasAsync(empresa, listaApiEndpoint, listaConfiguracaoJson)));
+            //foreach (var empresa in listaEmpresas)
+            //    tasks.Add(Task.Run(() => RealizarChamadasAsync(empresa, listaApiEndpoint, listaConfiguracaoJson)));
 
-            Task.WaitAll(tasks.ToArray());
+            //Task.WaitAll(tasks.ToArray());
+
+            await RealizarChamadasAsync(listaEmpresas.First(), listaApiEndpoint, listaConfiguracaoJson);
 
             await _acessoDados.ExecutaProcedureAsync("[dbo].[ValidaPaginasFaltantes]");
             await ReprocessaCasosDeErroAsync(listaEmpresas, listaApiEndpoint, listaConfiguracaoJson);
@@ -185,7 +184,7 @@ public class Negocio : IDisposable
         _disposed = true;
     }
 
-    ~Negocio()
+    ~OmieAPINegocio()
     {
         Dispose(false);
     }
